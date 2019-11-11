@@ -95,7 +95,7 @@ class CalendarHeader extends Component {
         <TouchableOpacity
           onPress={this.onPressLeft}
           style={this.style.arrow}
-          hitSlop={{left: 20, right: 20, top: 20, bottom: 20}}
+          // hitSlop={{left: 20, right: 20, top: 20, bottom: 20}}
           testID={testID ? `${CHANGE_MONTH_LEFT_ARROW}-${testID}`: CHANGE_MONTH_LEFT_ARROW}
         >
           {this.props.renderArrow
@@ -110,7 +110,7 @@ class CalendarHeader extends Component {
         <TouchableOpacity
           onPress={this.onPressRight}
           style={this.style.arrow}
-          hitSlop={{left: 20, right: 20, top: 20, bottom: 20}}
+          // hitSlop={{left: 20, right: 20, top: 20, bottom: 20}}
           testID={testID ? `${CHANGE_MONTH_RIGHT_ARROW}-${testID}`: CHANGE_MONTH_RIGHT_ARROW}
         >
           {this.props.renderArrow
@@ -131,14 +131,19 @@ class CalendarHeader extends Component {
     return (
       <View style={this.props.style}>
         <View style={this.style.header}>
-          {leftArrow}
-          <View style={{ flexDirection: 'row' }}>
-            <Text allowFontScaling={false} style={this.style.monthText} accessibilityTraits='header'>
-              {this.props.month.toString(this.props.monthFormat)}
-            </Text>
+          <View style={{ flexDirection: 'row', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              {this.props.leftHeaderComponet}
+              <Text allowFontScaling={false} style={this.style.monthText} accessibilityTraits='header'>
+                {this.props.month.toString(this.props.monthFormat)}
+              </Text>
+            </View>
             {indicator}
+            <View style={{ flexDirection: 'row' }}>
+              {leftArrow}
+              {rightArrow}
+            </View>
           </View>
-          {rightArrow}
         </View>
         {
           !this.props.hideDayNames &&
