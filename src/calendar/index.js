@@ -77,7 +77,9 @@ class Calendar extends Component {
     /** Handler which gets executed when press arrow icon left. It receive a callback can go next month */
     onPressArrowRight: PropTypes.func,
     /** Style passed to the header */
-    headerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array])
+    headerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
+    /** Left header component **/
+    leftHeaderComponet: PropTypes.any,
   };
 
   constructor(props) {
@@ -272,6 +274,7 @@ class Calendar extends Component {
           weekNumbers={this.props.showWeekNumbers}
           onPressArrowLeft={this.props.onPressArrowLeft}
           onPressArrowRight={this.props.onPressArrowRight}
+          leftHeaderComponet={this.props.leftHeaderComponet}
         />
         <View style={this.style.monthView}>{weeks}</View>
       </View>);
