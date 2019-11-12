@@ -65,6 +65,7 @@ class Day extends Component {
       defaultStyle.textStyle.color = this.theme.textDisabledColor;
     } else if (marking.selected) {
       defaultStyle.textStyle.color = this.theme.selectedDayTextColor;
+      defaultStyle.textStyle.fontWeight = this.theme.selectedDayWeight;
     }
     const resultStyle = ([marking]).reduce((prev, next) => {
       if (next.quickAction) {
