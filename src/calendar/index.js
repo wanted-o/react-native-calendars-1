@@ -79,7 +79,9 @@ class Calendar extends Component {
     /** Style passed to the header */
     headerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
     /** Left header component **/
-    leftHeaderComponet: PropTypes.any,
+    leftHeaderComponent: PropTypes.any,
+    /** Toggle Month Component **/
+    toggleMonthComponent: PropTypes.any
   };
 
   constructor(props) {
@@ -274,7 +276,8 @@ class Calendar extends Component {
           weekNumbers={this.props.showWeekNumbers}
           onPressArrowLeft={this.props.onPressArrowLeft}
           onPressArrowRight={this.props.onPressArrowRight}
-          leftHeaderComponet={this.props.leftHeaderComponet}
+          leftHeaderComponent={this.props.leftHeaderComponent}
+          toggleMonthComponent={this.props.toggleMonthComponent}
         />
         <View style={this.style.monthView}>{weeks}</View>
       </View>);
