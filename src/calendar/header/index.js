@@ -133,10 +133,11 @@ class CalendarHeader extends Component {
         <View style={this.style.header}>
           <View style={{ flexDirection: 'row', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              {this.props.leftHeaderComponet}
+              {this.props.leftHeaderComponent}
               <Text allowFontScaling={false} style={this.style.monthText} accessibilityTraits='header'>
                 {this.props.month.toString(this.props.monthFormat)}
               </Text>
+              {this.props.toggleMonthComponent}
             </View>
             {indicator}
             <View style={{ flexDirection: 'row' }}>
